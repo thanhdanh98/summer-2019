@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="xuly.js"></script>
+    <title>Chat room</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="login_form">
+            <h1> WHAT IS YOUR NAME?</h1>
+            <input type="text" id="txtUsername" placeholder="Your username?">
+            <input type="button" value="Register" id="btn-login" />
+        </div>
+        <div id="chat_form">
+            <h1> GROUP CHAT !!!</h1>
+            <div id="left">
+                <div id="boxTitle"> Users Online</div>
+                <div id="boxContent"></div>
+            </div>
+            <div id="right">
+                <div id="sayhi">
+                    <strong>Hello</strong> <span id="currentUser" style="color:brown;"></span>
+                    <input type="button" value="Log out" id="btn-logout" />
+                </div>
+                <div id="listMessage">
+
+                </div>
+                <input type="text" id="txtMessage" placeholder="Your message!">
+                <input type="button" value="Send" id="btn-send" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

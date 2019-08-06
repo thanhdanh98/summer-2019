@@ -1,0 +1,14 @@
+body{background-color: pink}
+#wrapper{width:70%; margin:auto}    
+#login_form{text-align: center; margin-top: 150px}
+#chat_form{text-align: center; margin-top: 150px}
+#txtUsername{border: solid 1px black; padding: 5px}
+#left #right {min-height: 300px}
+#left{width: 25%; float: left; background-color: cadetblue}
+#right{width: 75%; float: right; background-color: darkgray}
+#boxTitle{border: solid 1px black; padding: 6.5px;text-align: center; font-weight: bold}
+#listMessage{height: 300px; background-color: cornsilk}
+#sayhi{border: solid 1px black; padding: 5px;text-align: right; font-weight: bold}
+#txtMessage{border: solid 1px black; width:70%; padding: 5px}
+.user{color:white}
+#username{font-weight: bold}
