@@ -22,6 +22,13 @@ socket.on("server_send_message", function(data){
     $("#listMessage").append("<div class='message'> <span id ='userName'>" + data.us + ": </span>" + data.nd + "</div");
 });
 
+socket.on("user_inputting", function(data){
+    $("#thongbao").html(data);
+})
+
+socket.on("user_not_inputting", function(data){
+    $("#thongbao").html("");
+})
 $(document).ready(function () {
     $("#login_form").show();
     $("#chat_form").hide();
@@ -38,6 +45,14 @@ $(document).ready(function () {
 
     $("#btn-send").click(function(){
         socket.emit("user_send_message", $("#txtMessage").val());
+    });
+
+    $("#txtMessage").focusin(function(){
+        socket.emit("user_input");
+    });
+
+    $("#txtMessage").focusout(function(){
+        socket.emit("user_not_input");
     });
 });
 

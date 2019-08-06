@@ -23,7 +23,6 @@ io.on("connection", function (socket) {
         }
     });
 
-
     socket.on("user_dang_xuat", function(){
         let index = listUser.indexOf(socket.username);
         if(index > -1)
@@ -35,10 +34,18 @@ io.on("connection", function (socket) {
     socket.on("user_send_message", function(data){
         io.sockets.emit("server_send_message", {us:socket.username , nd : data});
     });
+    socket.on("user_input", function(){
+        var s = socket.username + " is typing...";
+        socket.broadcast.emit("user_inputting", s);
+    });
+    socket.on("user_not_input", function(){
+        io.sockets.emit("user_not_inputting");
+    });
 
     socket.on("disconnect", function () {
         console.log(socket.id + " have just Disconnected!");
     });
+    
 });
 server.listen("3000");
 
